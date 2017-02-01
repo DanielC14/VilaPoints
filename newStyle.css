@@ -1,0 +1,451 @@
+body{
+    background: #e6e6e6;
+    margin-bottom: 2%;
+}
+
+#header{
+    background-color: lightblue;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.divIMGPoints img{
+    padding-left: 50px;
+    text-align: center;
+    max-height: 250px;
+    max-width: 250px;
+    float: left;
+}
+
+
+#btnlogin{
+    margin-bottom: 5px;
+}
+
+.btnConta{
+    background-color: #1E90FF;
+    color: white;
+    border: none;
+    height: 50px;
+    width: 100%;
+
+}
+
+#map{
+    height: 500px;
+}
+
+#todosPontos, #detalhesPonto, #pontosFavoritos, #adicionarPonto, #pontosAdicionados, #titlePontosAdicionados, #titleFavoritos{
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+#adicionarPonto{
+    padding-top: 20px;
+    background-color: lightgrey;
+}
+
+#h1AddPonto{
+    text-align: center;
+}
+
+.form-group{
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+#selectedPhotos img{
+    max-width: 125px;
+    max-height: 125px;
+    float: left;
+    margin-bottom: 10px;
+}
+
+
+/*DIV DOS PONTOS*/
+.divPonto{
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+
+.divPontoTitle{
+    background-color: lightblue;
+}
+
+
+
+.yellow{
+    color: yellow;
+}
+
+.btnPonto{
+    background-color: #1E90FF;
+    color: white;
+    border: none;
+    width: 75%;
+    height: 50px;
+}
+.carousel{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.carousel img {
+
+    width: 100%;
+  }
+
+
+/*FIM DIV PONTOS*/
+
+#imgLogo{
+    width: 200px;
+    
+}
+
+#btnUser{
+    width: 100%;
+}
+
+
+
+#btnlogout{
+    margin-top: 25px;
+    height: 35px;
+    width: 100%;
+}
+
+.inputModal{
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+#btnloginSubmit, #btnSignupSubmit, .cancelbtn{
+    background-color: #1E90FF;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 25%;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+.modal{
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 0px;
+}
+
+.modal-content{
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    
+    width: 40%; /* Could be more or less, depending on screen size */
+}
+
+.divInfo{
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 5px;
+}
+
+.prevPage{
+    margin-bottom: 10px;
+}
+
+
+.imgEliminarPonto{
+        
+        width: 60%;
+        height: 60%;
+    }
+
+
+
+
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+
+
+
+
+
+
+
+@media (min-width: 0px) and (max-width: 767px){
+
+    #header{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+    .imgX{
+        width: 30%;
+        height: 30%;
+    }
+
+    .imgEliminarPonto{
+        
+        width: 60%;
+        height: 60%;
+    }
+
+    .modal-content{
+        width: 90%;
+    }
+    #imgAvatar{
+        width: 50%;
+        height: 50%;
+    }
+
+    #btnloginSubmit, #btnSignupSubmit, .cancelbtn{
+        
+        width: 35%;
+    }
+
+    .inputModal{
+        width: 75%;
+    }
+
+    .btnConta{
+        width: 35%;
+        margin-top:0px;
+        height: 50px;
+    }
+    .carousel{
+    margin-left: 0%;
+    margin-right: 0%;
+}
+
+    .form-group{
+    padding-left: 5%;
+    padding-right: 5%;
+    }   
+
+
+    #imgLogo{
+    width: 50%;
+    height: 50%;
+    }
+
+    .divIMG{
+        padding-left: 0px;
+        text-align: center;
+    }
+
+    .divBTN{
+        padding-top: 30px;
+        padding-right: 0px;
+    }
+
+    #btnUser{
+        width: 50%;
+    }
+
+    
+
+    #btnlogout{
+        width: 50%;
+        height: 40px;
+    }
+
+    #todosPontos, #detalhesPonto, #pontosFavoritos, #adicionarPonto, #pontosAdicionados, #titlePontosAdicionados, #titleFavoritos{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .btnPonto{
+    width: 100%;
+    height: 40px;
+    }
+
+    .descPoint{
+        float: left;
+    }
+
+    .divIMGPoints img{
+    padding-left: 0px;
+    text-align: center;
+    max-height: 250px;
+    max-width: 250px;
+}
+
+
+    .divInfo{
+    padding-left: 0px;
+    padding-right: 0px;
+    text-align: center;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 1440px){
+    #header{
+    padding-left: 0px;
+    padding-right:  0px;
+}
+    .modal-content{
+        width: 50%;
+    }
+    #imgAvatar{
+        width: 50%;
+        height: 50%;
+    }
+    .imgPoint{
+        float: right !important;
+    }
+
+    #btnloginSubmit, #btnSignupSubmit, .cancelbtn{
+        
+        width: 35%;
+    }
+
+    .inputModal{
+        width: 75%;
+    }
+
+    .imgX{
+        width: 30%;
+        height: 30%;
+    }
+
+    .imgEliminarPonto{
+        
+        width: 60%;
+        height: 60%;
+    }
+
+    .btnConta{
+        
+    }
+
+    .carousel{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+    #btnlogout{
+        width: 35%;
+        margin-top:5px;
+        height: 30px;
+        text-align: center;
+        padding-right: 95px;
+    }
+
+
+    #imgLogo{
+    width: 270px;
+    height: 108px;
+    }
+
+    .divIMG{
+        padding-left: 10px;
+    }
+
+    .divBTN{
+        padding-top: 10px;
+        padding-right: 110px;
+    }
+
+    #btnUser{
+        width: 200px;
+    }
+
+    
+
+    #btnlogin, #btnsignup{
+        height: 40px;
+        margin-bottom: 5px;
+    }
+
+    #todosPontos, #detalhesPonto, #pontosFavoritos, #adicionarPonto, #pontosAdicionados, #titlePontosAdicionados, #titleFavoritos{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .btnPonto{
+    width: 100%;
+    height: 40px;
+    }
+
+
+    .btnAddFavorito, .btnRemoveFavorito
+    {
+        padding-bottom: 70px;
+    }
+
+
+}
+
+@media (min-width: 865px) and (max-width: 1440px){
+
+    .btnAddFavorito, .btnRemoveFavorito
+    {
+        padding-bottom: 5px;
+    }
+
+}
+
+@media (min-width: 1025px) and (max-width: 1440px){
+    .carousel{
+    margin-left: 20%;
+    margin-right: 20%;
+    }
+}
+
+
+@media (min-width: 1441px) and (max-width: 1593px){
+
+    .btnAddFavorito, .btnRemoveFavorito
+    {
+        padding-bottom: 70px;
+    }
+
+    .carousel{
+    margin-left: 20%;
+    margin-right: 20%;
+    }
+
+    .imgEliminarPonto{
+        
+        width: 60%;
+        height: 60%;
+    }
+
+}

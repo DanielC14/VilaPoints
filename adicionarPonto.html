@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Vila Points - Adicionar Ponto</title>
+    <link rel="icon" href="https://firebasestorage.googleapis.com/v0/b/ptvc-911fd.appspot.com/o/icon.ico?alt=media&token=3d666a64-01f0-46d6-9052-a54b3579a9ae" type="icon">
+
+   
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!--FIREBASE-->
+    <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+
+    <!--GOOGLE MAPS API-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAT_eBk_j-ws7s7S0BBBjf-ysJJ_vknZ_M"></script>     
+    
+
+
+    <script src="scriptPI.js"></script>
+     
+    <script>window.onload = initAddPonto();</script>
+
+    <link rel="stylesheet" href="newStyle.css">
+
+</head>
+
+<body>
+
+    <div class="container-fluid"  >
+
+        <div class="row " id="header">
+            <div class="col-sm-1 divIMG">
+                <img id="imgLogo" src="https://firebasestorage.googleapis.com/v0/b/ptvc-911fd.appspot.com/o/logotipo2.png?alt=media&token=e91cf70b-2823-41d0-9b8b-4a1c4b69651b" alt="Pontos Turísticos Vila do Conde">
+            </div>
+            <div class="col-sm-7">
+
+            </div>
+            <div class="col-sm-4 divBTN">
+                <center>
+                <button class="btnConta" id="btnlogin">Iniciar Sessão</button>
+                
+                <button class="btnConta" id="btnsignup">Criar Conta</button>
+
+                    <div class="dropdown hide" id="ddUser">
+                        <button id="btnUser" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">USER
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="btnPagInicial"><span class="glyphicon glyphicon-home"></span>  Página Inicial</a></li>
+                            <li><a href="#"  class="btnFavorito"><span class="glyphicon glyphicon-star"></span>  Favoritos</a></li>
+                            <li><a href="#"  class="btnAddPonto"><span class="glyphicon glyphicon-plus"></span>  Adicionar Ponto Turístico</a></li>
+                            <li><a href="#" class="btnShowMyPoints"><span class="glyphicon glyphicon-th-list"></span>  Meus Pontos</a></li>
+                        </ul>
+                    </div>
+                    
+                <button class="btnConta btnBadLogout hide" id="btnlogout">LogOut</button>
+                </center>
+            </div>
+        </div>
+
+        <div class="row" >
+            <div class="col-sm-12" id="adicionarPonto">
+                <div class="panel panel-body">
+                    <h1 id="h1AddPonto">Adicionar Ponto Turístico</h1>
+                    <br><br>
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="#inputTitle">Título:</label>
+                            <div class="col-sm-10">
+                                <input class="inputAddPonto form-control" id="inputTitle" type="text" placeholder="Coloque o nome do ponto" required>
+                            </div>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="#inputMorada">Morada:</label>
+                            <div class="col-sm-10">
+                                <input class="inputAddPonto form-control" id="inputMorada" type="text" placeholder="Coloque a morada do ponto" required>
+                            </div>
+                            
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="#inputDescription">Descrição:</label>
+                            <div class="col-sm-10">
+                                <textarea class="inputAddPonto form-control" name="" id="inputDescription" cols="30" rows="5" placeholder="Coloque uma descrição sobre o ponto em causa(ex: História, Curiosidades, etc.)" required style="resize: none;"></textarea>
+                                
+                            </div>
+                            
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="#inputMap">Localização:</label>
+                            <div class="col-sm-10">
+                                <div id="inputMap"  style='height:400px;'>
+
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <label class="control-label col-sm-2" for="#inputFile">Fotografias:</label>
+                            </div>
+                            <br><br>
+                            <div class="col-sm-12" id="selectedPhotos">
+
+                            </div>
+                            
+                            
+                            <div class="col-sm-10">
+                                <input id="inputFile" type="file" class="form-control" max="3" accept="image/*"  placeholder="Faça upload das Fotografias aqui" multiple>
+                            </div>
+                            
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <div class="col-sm-12" style="text-align: center;">
+                                <p class="erro" style='color:red;'></p>
+                            </div>        
+                            <div class="col-sm-12" style="text-align: center;">
+                                <button id="inputSubmit" type="button" class="btnConta">Adicionar</button>
+                            </div>
+                        </div>
+                        
+                       
+                    </form>
+                    
+                </div>
+                
+                
+
+
+
+            </div>
+        </div>
+        
+
+    </div>
+
+    
+
+
+    <div id="modalaCriar" class="modal container">
+        <div class="modal-content animate">
+            <div class="row" id="divAnimacao" style="margin-top:10px;">
+                <div class="col-sm-12">
+                    <center>
+                    <svg width='150px' height='150px' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="uil-default"><rect x="0" y="0" width="100" height="100" fill="none" class="bk"></rect><rect  x='46.5' y='40' width='7' height='20' rx='10' ry='10' fill='#00b2ff' transform='rotate(0 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='10' ry='10' fill='#00b2ff' transform='rotate(18 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.05s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='10' ry='10' fill='#00b2ff' transform='rotate(36 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.1s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='10' ry='10' fill='#00b2ff' transform='rotate(54 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.15s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='10' ry='10' fill='#00b2ff' transform='rotate(72 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.2s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='10' ry='10' fill='#00b2ff' transform='rotate(90 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.25s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='10' ry='10' fill='#00b2ff' transform='rotate(108 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.3s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='10' ry='10' fill='#00b2ff' transform='rotate(126 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.35s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='10' ry='10' fill='#00b2ff' transform='rotate(144 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.4s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='10' ry='10' fill='#00b2ff' transform='rotate(162 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.45s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='10' ry='10' fill='#00b2ff' transform='rotate(180 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.5s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='10' ry='10' fill='#00b2ff' transform='rotate(198 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.55s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='10' ry='10' fill='#00b2ff' transform='rotate(216 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.6s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='10' ry='10' fill='#00b2ff' transform='rotate(234 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.65s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='10' ry='10' fill='#00b2ff' transform='rotate(252 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.7s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='10' ry='10' fill='#00b2ff' transform='rotate(270 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.75s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='10' ry='10' fill='#00b2ff' transform='rotate(288 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.8s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='10' ry='10' fill='#00b2ff' transform='rotate(306 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.85s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='10' ry='10' fill='#00b2ff' transform='rotate(324 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.9s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='10' ry='10' fill='#00b2ff' transform='rotate(342 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.95s' repeatCount='indefinite'/></rect></svg>
+                    </center>
+                </div>
+                <div class="col-sm-12">
+                    <center>
+                    <h3>A fazer upload das imagens e a criar ponto...</h3>
+                    </center>
+                </div>
+
+            </div>
+
+            
+        </div>
+    </div>
+
+    <div id="modalCriado" class="modal container">
+        <div class="modal-content animate">
+            <div class="row" id="divAnimacao" style="margin-top:10px;">
+                <center><div class='col-sm-12'><img src='https://firebasestorage.googleapis.com/v0/b/ptvc-911fd.appspot.com/o/Certo.png?alt=media&token=dc56c7b2-3d9e-4e38-b864-adb422830059'></div><div class='col-sm-12'><h3>Ponto criado com sucesso!</h3></div><div class='col-sm-12'><button class='btnConta' id='btnSucesso'>Confirmar</button></div></center>
+
+            </div>
+
+            
+        </div>
+    </div>
+
+
+</body>
+
+</html>

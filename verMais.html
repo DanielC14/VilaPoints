@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Vila Points - </title>
+    <link rel="icon" href="https://firebasestorage.googleapis.com/v0/b/ptvc-911fd.appspot.com/o/icon.ico?alt=media&token=3d666a64-01f0-46d6-9052-a54b3579a9ae" type="icon">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!--FIREBASE-->
+    <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+
+    <!--GOOGLE MAPS API-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAT_eBk_j-ws7s7S0BBBjf-ysJJ_vknZ_M"></script>
+
+
+    <script src="scriptPI.js"></script>
+    <script>window.onload = initVerMais();</script>
+
+    <link rel="stylesheet" href="newStyle.css">
+
+</head>
+
+<body>
+
+    <div class="container-fluid"  >
+
+        <div class="row" id="header">
+            <div class="col-sm-1 divIMG">
+                <img id="imgLogo" src="https://firebasestorage.googleapis.com/v0/b/ptvc-911fd.appspot.com/o/logotipo2.png?alt=media&token=e91cf70b-2823-41d0-9b8b-4a1c4b69651b" alt="Vila do Conde">
+            </div>
+            <div class="col-sm-7"></div>
+            <div class="col-sm-4 divBTN">
+                <center>
+                    <button class="btnConta" id="btnlogin">Iniciar Sessão</button>
+                    
+                    <button class="btnConta" id="btnsignup">Criar Conta</button>
+
+                        <div class="dropdown hide" id="ddUser">
+                            <button id="btnUser" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">USER
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" class="btnPagInicial"><span class="glyphicon glyphicon-home"></span>  Página Inicial</a></li>
+                                <li><a href="#" class="btnFavorito"><span class="glyphicon glyphicon-star"></span>  Favoritos</a></li>
+                                <li><a href="#" class="btnAddPonto"><span class="glyphicon glyphicon-plus"></span>  Adicionar Ponto Turístico</a></li>
+                                <li><a href="#" class="btnShowMyPoints"><span class="glyphicon glyphicon-th-list"></span>  Meus Pontos</a></li>
+                            </ul>
+                        </div>
+                        
+                    <button class="btnConta btnVMLogout hide" id="btnlogout">LogOut</button>
+                </center>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12" id="detalhesPonto">
+                
+                 <div class="panel panel-body">
+                    <div class="col-sm-12">
+                        <div class="col-sm-10"><h2 id="verMTitle"></h2></div>
+                        <div class="col-sm-2" id="verMbtnFavorite"></div>
+                    </div>
+                    <br><br><br><hr>
+                    
+                    <div class="col-sm-12" style="margin-bottom:20px;">
+                        <p id="verMDescription"></p>
+                    </div>
+
+                    <div class="col-sm-12">
+                            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                            
+
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner" role="listbox" id="verMImages">
+                                    <!--<div class="item active">
+                                        <img class="carImage" src="https://firebasestorage.googleapis.com/v0/b/ptvc-911fd.appspot.com/o/15ilt%2FAlf_ndega_Nau_1_736_2500.jpg?alt=media&token=eb6a61de-b67a-41f6-a837-1b4610b95cb3" alt="Chania" width="460" height="345">
+                                    </div>
+
+                                    <div class="item">
+                                        <img class="carImage" src="https://firebasestorage.googleapis.com/v0/b/ptvc-911fd.appspot.com/o/15ilt%2FMuseu-da-construcao-Naval-Vila-do-Conde.jpg?alt=media&token=f7e1cae0-a6d9-447c-8bf0-be374cc3df37" alt="Chania" width="460" height="345">
+                                    </div>
+                                    
+                                    <div class="item">
+                                        <img class="carImage" src="https://firebasestorage.googleapis.com/v0/b/ptvc-911fd.appspot.com/o/15ilt%2F139_AD0046632.jpg?alt=media&token=06d475e2-3075-45c3-83af-ee0d33883cdd" alt="Flower" width="460" height="345">
+                                    </div>-->
+                                </div>
+
+                                <!-- Left and right controls -->
+                                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+
+                    </div>
+
+                    <div class="col-sm-12">
+                        <h3>Localização:</h3>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <p id="verMLocation"></p>
+                    </div>
+
+                    <div class="col-sm-12" id="map">
+
+                    </div>
+
+                 </div>
+
+
+
+            </div>
+        </div>
+        
+
+    </div>
+
+    <!--MODAL LOGIN-->
+
+    <div id="modalLogin" class="modal container">
+        <form class="modal-content animate">
+            <div>
+                <center>
+                    <span id="closeMLogin" class="close" title="Close Modal">&times;</span>
+                    <img id="imgAvatar" src="https://firebasestorage.googleapis.com/v0/b/ptvc-911fd.appspot.com/o/avatar.png?alt=media&token=493a29a7-e594-460c-9bfd-5e64862ff923"
+                    alt="Avatar" style="padding-top: 20px;">
+                    <br><br>
+                
+                    <label><b>Email</b></label><br>
+                    <input class="inputModal" id="emailLogin" type="email" placeholder="Enter Email" name="email" required>
+                    <br>
+                    <label><b>Password</b></label><br>
+                    <input class="inputModal" id="passwordLogin" type="password" placeholder="Enter Password" name="psw" required>
+                    <br><br>
+                    <p class="erro" style='color: red;'></p>
+                    <button class="btnloginSubmitVM" id="btnloginSubmit">Login</button>
+                </center>
+                    
+            </div>
+
+            <div style="background-color: #f1f1f1; padding-left: 3%;">
+                <button type="button" onclick="document.getElementById('modalLogin').style.display='none'" class="cancelbtn">Cancel</button>
+            </div>
+            
+        </form>
+    </div>
+
+    <!--MODAL CRIAR CONTA-->
+
+    <div id="modalSignup" class="modal container">
+        <form class="modal-content animate">
+            <div>
+                <center>
+                    <span id="closeMSignup" class="close" title="Close Modal">&times;</span>
+                    <img id="imgAvatar" src="https://firebasestorage.googleapis.com/v0/b/ptvc-911fd.appspot.com/o/avatar.png?alt=media&token=493a29a7-e594-460c-9bfd-5e64862ff923"
+                    alt="Avatar" style="padding-top: 20px;">
+                    <br><br>
+                
+                    <label><b>Email</b></label><br>
+                    <input class="inputModal" id="emailSignup" type="email" placeholder="Enter Email" name="uname" required>
+                    <br>
+                    <label><b>Password</b></label><br>
+                    <input class="inputModal" id="passwordSignup" type="password" minlength="6" placeholder="Enter Password" name="psw" required>
+                    <br>
+                    <label><b>Repeat password</b></label><br>
+                    <input class="inputModal" id="passwordRepeatSignup" type="password" minlength="6" placeholder="Enter password again" name="psw" required>
+                    <br>
+                    <label><b>Username</b></label><br>
+                    <input class="inputModal" id="usernameInput" type="text" placeholder="Enter Username" required>
+                    <br>
+                    <p class="erro" style='color: red;'></p>
+                    <button class="inputModal" id="btnSignupSubmit">Criar</button>
+                </center>
+                    
+            </div>
+
+            <div style="background-color: #f1f1f1; padding-left: 3%;">
+                <button type="button" onclick="document.getElementById('modalLogin').style.display='none'" class="cancelbtn">Cancel</button>
+            </div>
+            
+        </form>
+    </div>
+
+
+</body>
+
+</html>

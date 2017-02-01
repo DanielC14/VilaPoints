@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Vila Points - Adicionados</title>
+    <link rel="icon" href="https://firebasestorage.googleapis.com/v0/b/ptvc-911fd.appspot.com/o/icon.ico?alt=media&token=3d666a64-01f0-46d6-9052-a54b3579a9ae" type="icon">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!--FIREBASE-->
+    <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+
+
+    <script src="scriptPI.js"></script>
+    <script>window.onload = initAdicionados();</script>
+
+    <link rel="stylesheet" href="newStyle.css">
+
+</head>
+
+<body>
+
+    <div class="container-fluid"  >
+
+        <div class="row " id="header">
+            <div class="col-sm-1 divIMG">
+                <img id="imgLogo" src="https://firebasestorage.googleapis.com/v0/b/ptvc-911fd.appspot.com/o/logotipo2.png?alt=media&token=e91cf70b-2823-41d0-9b8b-4a1c4b69651b" alt="Vila do Conde">
+            </div>
+            <div class="col-sm-7">
+
+            </div>
+            <div class="col-sm-4 divBTN">
+                <center>
+                <button class="btnConta" id="btnlogin">Iniciar Sessão</button>
+                
+                <button class="btnConta" id="btnsignup">Criar Conta</button>
+
+                    <div class="dropdown hide" id="ddUser">
+                        <button id="btnUser" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">USER
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="btnPagInicial"><span class="glyphicon glyphicon-home"></span>  Página Inicial</a></li>
+                            <li><a href="#"  class="btnFavorito"><span class="glyphicon glyphicon-star"></span>  Favoritos</a></li>
+                            <li><a href="#"  class="btnAddPonto"><span class="glyphicon glyphicon-plus"></span>  Adicionar Ponto Turístico</a></li>
+                            <li><a href="#" class="btnShowMyPoints"><span class="glyphicon glyphicon-th-list"></span>  Meus Pontos</a></li>
+                        </ul>
+                    </div>
+                    
+                <button class="btnConta btnBadLogout hide" id="btnlogout">LogOut</button>
+                </center>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12" id="titlePontosAdicionados">
+                <center>
+                    <h1>Meus Pontos</h1>
+                </center>
+                
+            </div>
+            <div class="col-sm-12" id="pontosAdicionados">
+                
+                
+
+
+
+            </div>
+        </div>
+        
+
+    </div>
+
+
+    <div id="modalEliminar" class="modal container">
+        <div class="modal-content animate">
+            <div class="row" id="divEliminar" style="margin-top:10px; margin-bottom:10px;">
+                <center>
+                    <div class='col-sm-12'><img class='imgX' src='https://firebasestorage.googleapis.com/v0/b/ptvc-911fd.appspot.com/o/delete1.png?alt=media&token=2157b8f1-0572-4af9-a35a-b6c74059e21a'></div>
+                    <div class='col-sm-12'><h3>Tem a certeza que deseja eliminar?</h3></div>
+                    <div class='col-sm-12' id="divIMGEliminar"> 
+                        
+                    </div>
+                    <div class='col-sm-12' id="divTitleEliminar">
+
+                    </div>
+                    <div class='col-sm-12'>
+                        <button class='btnConta' id='btnYes' style="background-color: green; margin-bottom: 10px; width: 50%;">Sim</button>
+                        <button class='btnConta' id='btnNo' style="background-color: darkred; width: 50%;">Não</button>
+                    </div>
+                </center>
+
+            </div>
+
+            
+        </div>
+    </div>
+
+
+</body>
+
+</html>
