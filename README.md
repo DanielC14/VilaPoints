@@ -8,16 +8,26 @@ WIP
 
 ## Technologies Used
 
-* 
-
-## Resources Used
-
-* 
+* HTML
+* Javascript
+* [JQuery](https://jquery.com/)
+* [Bootstrap](http://getbootstrap.com/)
+* [Firebase(for auth and DataBase)](https://firebase.google.com/)
 
 ## Preview
 
- * [Click here to preview]()
+ * [Click here to enter](https://cdn.rawgit.com/DanielC14/VilaPoints/97a2c929/pagInicial.html)
 
 ## Screenshot
 
-![Page]()
+* Homepage
+![Page](screenshots/Homepage.PNG?raw=true)
+
+* See more
+![Page](screenshots/SeeMore.PNG?raw=true)
+
+* Favorites
+![Page](screenshots/Favorites.PNG?raw=true)
+
+* Add Point
+![Page](screenshots/AddPoint.PNG?raw=true)
